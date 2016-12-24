@@ -6,8 +6,16 @@ a quick list of ideas for an FPGA-based computer architecture
 hack processor rev 0
 --------------------
 
-OVERVIEW
---------
+PLATFORM OVERVIEW
+-----------------
+
+devices
+-------
+- support for 44.1 KHz 16-bit [CD-quality] stereo digital audio
+  - first done with Papilio Arcade Megawing's Sigma Delta DAC
+- support for VGA graphics output
+  - the Arcade Megawing supports 4096 colors; need to see if I can do some
+    resolution with 16-bit or 24-bit pixels
 
 cpu
 ---
@@ -69,7 +77,8 @@ OPCODES
 - 1-bit lock-flag: 1 - lock memory bus
 - 4-bit register ID - per-unit
 - 3-bit argument size
-  - integer: 0 - byte, 1 - word, 2 - long, 3 - quad
+  - integer: 0 - word, 1 - dual, 2 - quad, 3 - octa
+    - 16-, 32-, 64-, or 128-bit
   - floating-point: 0 - single, 1 - double, 2 - extended, 3 - quad
     - 32-, 64-, 80-, or 128-bit
 
