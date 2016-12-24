@@ -1,0 +1,75 @@
+a quick list of ideas for an FPGA-based computer architecture
+-------------------------------------------------------------
+
+- first implementation on Xilinx Spartan 6 (Papilio Pro)
+
+hack processor rev 0
+--------------------
+
+OVERVIEW
+--------
+
+cpu
+---
+- 32-bit RISC-like
+- run model based on registers and stack
+- memory accesses of 8, 16, and 32 bits
+- system registers: 8 32-bit registers: ctrl, msw, pc, sp, fp, task, int, ???
+- registers: 16 32-bit integer, 16 32/64-bit floating-point registers
+- ret, rfl, lnk, nsa, r4..r15
+- system operations: rst, hlt
+- arithmetic operations: add, sub, mul, div, rem
+- logical operations: not, and, or, xor
+- shift and rotate operations: shl, shr, sar, rol, ror
+- branch operations: jmp/bra, beq/bz, bnz, blt, ble, bgt, bge, bo, bno, bc, bnc
+- subroutine operations: cal, ntr, lve, ret
+- load-store operations: lsr, ldr, str
+- stack operations: psh, pop, psm, pss
+- atomic operations: cas, dcs, stc, lsc
+- I/O operations: in, out
+- instruction prefetch queue
+- instruction pipeline with 3-5 stages (fetch, decode, execute, ...)
+- separate instruction and data caches
+
+mem
+---
+- 1 megabyte of RAM; 32-bit memory addressing
+- memory mapped devices at high addresses (below 4 gigabytes in 32-bit version)
+- optional mmu-unit for virtual memory
+  - 1..8-kilobyte pages
+  - flat table of 32-bit page-entries
+    - flags: read, write, exec, pres, sys
+io
+--
+- 16-bit port address space for devices
+- I/O permission bitmap
+- dma buffers, 16 kilobytes per device in initial configuration
+- routing of memory mapped operations
+
+gfx
+---
+- 640x480 default mode (16- or 24-bit pixels)
+- framebuffer
+- direct draw
+
+REGISTERS
+---------
+- ret		- subroutine return value
+- rfl		- instruction flags
+  		  - rif - low 16 bits for a bitmap of raised exceptions
+		  - rsf - high 16 bits for of, cf, ...
+- lnk		- link register, i.e. subroutine return address
+		  - 32-bit linear address
+- r3..r7	- arg0..arg4; subroutine argument registers (rest on stack)
+- r8..r15	- scratch registers for subroutine internal use (callee-save)
+
+OPCODES
+-------
+- 8-bit instruction ID - 4-bit unit ID, 4-bit operation
+- 1-bit lock-flag: 1 - lock memory bus
+- 4-bit register ID - per-unit
+- 3-bit argument size
+  - integer: 0 - byte, 1 - word, 2 - long, 3 - quad
+  - floating-point: 0 - single, 1 - double, 2 - extended, 3 - quad
+    - 32-, 64-, 80-, or 128-bit
+
