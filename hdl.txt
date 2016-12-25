@@ -1,0 +1,40 @@
+organization of hack hdl modules
+--------------------------------
+- I think I'm going to try Verilog first as its C-oriented syntax appeals to me
+  more than VHDL
+
+verilog modules
+---------------
+- ps2	- keyboard and mouse
+- rs232	- serial port with 16550 UART
+- vga	- VGA controller (both CRT and TFT) with support for 16- and/or 24-bit
+	  colors (RGB565 for 16-bit)
+- sys/	- SYS-directory
+  rst	- reset
+  hlt	- halt
+- alu/	- ALU-directory	- first version supports 8-, 16-, and 32-bit operations
+  basic arithmetics
+  -----------------
+  add	- adder
+  mul	- multiplier
+  div	- divider
+  logical functions
+  -----------------
+  log	- logical functions
+  shifter
+  -------
+  shft	- shift unit
+  control flow
+  ------------
+  bra	- branch unit
+  sub	- subroutine unit
+  memory access
+  -------------
+  ldst	- load-store unit
+  stk	- stack unit
+  input-output
+  ------------
+  io	- I/O unit
+  optional units
+  --------------
+  atom	- atomic operation unit

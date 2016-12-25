@@ -3,8 +3,8 @@
 
 /* system parameters */
 #define HACK_VERSION             0x0000
-#define HACK_IO_PORTS        65536
-#define HACK_PAGE_SIZE       1024
+#define HACK_IO_PORTS            65536
+#define HACK_PAGE_SIZE           1024
 
 /* SYSTEM OPERATIONS */
 
@@ -95,21 +95,24 @@
 #define HACK_PMR                 0x02   // push many registers; bitmap-argument
 #define HACK_PSR                 0x03   // push system register
 #define HACK_PMS                 0x03   // push many system registers
+
+/* I/O OPERATIONS */
+
+/* unit */
+#define HACK_CPU_IO_UNIT         0x09
+#define HACK_IN                  0x00
+#define HACK_OUT                 0x01
+
+/* OPTIONAL UNITS */
+
 /* atomic operations */
 /* unit */
-#define HACK_CPU_ATOMIC_UNIT     0x09
+#define HACK_CPU_ATOMIC_UNIT     0x0a
 /* operations */
 #define HACK_CAS                 0x00   // compare and swap
 #define HACK_DCS                 0x01   // dual-word compare and swap
 #define HACK_STC                 0x02   // store conditional
 #define HACK_LSC                 0x03   // load-store conditional
-
-/* I/O OPERATIONS */
-
-/* unit */
-#define HACK_CPU_IO_UNIT         0x0a
-#define HACK_IN                  0x00
-#define HACK_OUT                 0x01
 
 #define HACK_CPU_MAX_UNIT        0x0f
 
@@ -161,6 +164,8 @@
 #define HACK_FSTQ                0x05   // store 128-bit quad from register
 
 #define HACK_FPU_MAX_UNIT        0x1f
+
+/* instructions are composed of 16-bit parcels */
 
 struct hackop {
     unsigned unit : 5;  // processor unit
