@@ -1,3 +1,4 @@
+- interrupt/exception interface
 - investigate different FPGA memory architectures; BRAM, SRAM, DRAM
   - see about implementing a zone allocator
 - make atomic operations optional [multicore]; perhaps add a thr-instruction
