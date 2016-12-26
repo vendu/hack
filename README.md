@@ -14,7 +14,9 @@ Ideas for Hardware
 - possible I/O not provided by the Arcade Megawing
   - RS-232 serial port with 16550 UART
 - audio modules
-  - possible hardware: SID MOS 6581, Gravis Ultrasound, Roland MT-32, AC97
+  - possible hardware: SID MOS 6581, Gravis Ultrasound, Roland MT-32, AC97,
+    Atari ST -style YM2149
+  - a port of C64 SAM speech synthesizer
 - graphics support
   - blitter
 
