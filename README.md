@@ -19,6 +19,8 @@ Ideas for Hardware
   - a port of C64 SAM speech synthesizer
 - graphics support
   - blitter
+  - alpha-blending
+  - drawing of basic shapes; line, triangle, rectangle, circle
 
 Have fun,
 
