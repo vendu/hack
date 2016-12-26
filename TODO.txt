@@ -4,4 +4,5 @@
 - make atomic operations optional [multicore]; perhaps add a thr-instruction
 - see if it's feasible to implement a 16-bit DAC for VGA graphics or just use
   the 12-bit one provided by the Papilio Arcade Megawing
+- more FPU-instructions; FSQRT, comparisons
 
