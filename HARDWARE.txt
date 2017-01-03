@@ -1,0 +1,32 @@
+Ideas for Hardware
+------------------
+
+FPGA Gear
+---------
+- Papilio Pro board with Xilinx Spartan 6 LX9
+  - 2 USB 2.0 ports
+- Papilio RetroCade Megawing
+  - MicroSD-card slot
+  - support for SID MOS, Yamaha YM-2149, and MOD files
+
+Processor
+---------
+- simple 32-bit RISC CPU with support for 32-bit single-precision floating-point
+
+Hardware Modules
+----------------
+- VGA graphics; 640x480@16bpp
+  - framebuffer...?
+  - blitter
+  - alpha-blending
+  - drawing of basic shapes; line, triangle, rectangle, circle
+- RS-232 serial port with 16550 UART
+- a port of C64 SAM speech synthesizer
+- audio modules
+  - possible hardware: Gravis Ultrasound, Roland MT-32, AC97
+
+Operating System
+----------------
+- memory support for BRAM, SRAM, SDRAM
+- graphics support for 16-bit VGA as described above
+

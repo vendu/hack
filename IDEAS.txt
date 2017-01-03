@@ -1,0 +1,1 @@
+- support for boolean ops NAND, NOR, ORNOT, ANDNOT
