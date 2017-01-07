@@ -1,6 +1,8 @@
 #ifndef __HACK_MACH_H__
 #define __HACK_MACH_H__
 
+/* ATTENTION: the architecture is under development, so things are changing */
+
 /* system parameters */
 #define HACK_VERSION             0x0000
 #define HACK_IO_PORTS            65536
@@ -172,7 +174,7 @@ struct hackop {
     unsigned op   : 4;  // unit operation
     unsigned lock : 1;  // lock memory bus flag
     unsigned vec  : 1;  // vector operation bit
-    unsigned arg  : 5;  // IMM-bit, register ID
+    unsigned arg  : 5;  // register ID
     unsigned asz  : 2;  // argument size
 } PACK();
 
